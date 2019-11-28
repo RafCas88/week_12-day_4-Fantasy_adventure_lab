@@ -1,10 +1,13 @@
 package players;
 
+import enemies.Enemy;
+import weapons.Spell;
+
 public interface Ispell {
 
-    String castSpell();
-    void useCreature();
-    void  changeSpell();
-    void changeCreature();
+    int castSpell(Enemy enemy);
+    int useCreature(Enemy enemy);
+    void  changeSpell(Spell newSpell);
+    void changeCreature(int newCreature);
 
 }

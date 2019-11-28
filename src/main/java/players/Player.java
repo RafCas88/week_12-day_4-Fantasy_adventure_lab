@@ -1,6 +1,9 @@
 package players;
 
+import Items.Treasure;
+
 import java.util.ArrayList;
+
 
 public abstract class  Player {
 
@@ -11,7 +14,7 @@ public abstract class  Player {
     public Player(String name, int health){
         this.name = name;
         this.health = health;
-        treasures = new ArrayList<Treasure>();
+        this.treasures = new ArrayList<Treasure>();
     }
 
     public String getName(){

@@ -1,10 +1,11 @@
 package players;
 
+import enemies.Enemy;
 import weapons.Weapon;
 
 public interface Ifightable {
 
-    String attack(Enemy enemy);
-    String defense(Enemy enemy);
+    int attack(Enemy enemy);
+    int defense(Enemy enemy);
     void changeWeapon(Weapon newWeapon);
 }

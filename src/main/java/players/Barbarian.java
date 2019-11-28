@@ -1,5 +1,7 @@
 package players;
 
+import Items.Treasure;
+import enemies.Enemy;
 import weapons.Weapon;
 
 import java.util.ArrayList;
@@ -21,14 +23,12 @@ public class Barbarian extends Player implements Ifightable {
         return this.horseHealth;
     }
 
-    public String attack(Enemy enemy) {
-        enemy.health - this.weapon.getDamage();
-        return "You're gonna die pal";
+    public int attack(Enemy enemy) {
+       return enemy.getHealth() - this.weapon.getDamage();
     }
 
-    public String defense(Enemy enemy) {
-        getHealth() - (enemy.weapon.getDamage() - this.armour);
-        return "Oh Boy";
+    public int defense(Enemy enemy) {
+       return getHealth() - enemy.getWeapon().getDamage();
     }
 
     public void changeWeapon(Weapon newWeapon) {

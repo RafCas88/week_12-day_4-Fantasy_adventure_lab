@@ -1,6 +1,8 @@
 package players;
 
 
+import Items.Treasure;
+import enemies.Enemy;
 import weapons.Weapon;
 
 import java.util.ArrayList;
@@ -16,18 +18,20 @@ public class Knight extends Player implements Ifightable {
         super(name, health);
         this.armour = armour;
         this.weapon = weapon;
-        treasures = new ArrayList<Treasure>();
+        this.treasures = new ArrayList<Treasure>();
     }
 
 
-    public String attack(Enemy enemy) {
-        enemy.health - this.weapon.getDamage();
-        return "I am going to kill you!";
+    public Weapon getWeapon(){
+        return this.weapon;
     }
 
-    public String defense(Enemy enemy) {
-        getHealth() - (enemy.weapon.getDamage() - this.armour);
-        return "OH LORD";
+    public int attack(Enemy enemy) {
+        return enemy.getHealth() - this.weapon.getDamage();
+    }
+
+    public int defense(Enemy enemy) {
+        return getHealth() - (enemy.getWeapon().getDamage() - this.armour);
     }
 
     public void changeWeapon(Weapon newWeapon) {
